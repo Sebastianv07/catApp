@@ -1,0 +1,30 @@
+<div class="card shadow p-4">
+  <h4 class="mb-3 text-center">Selecciona una raza</h4>
+
+  <div class="mb-3">
+    <select class="form-select" [(ngModel)]="selectedBreed" (change)="onSelectBreed()">
+      <option value="">Seleccione una raza...</option>
+      <option *ngFor="let b of breeds" [value]="b.id">{{ b.name }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="breedInfo" class="mt-4">
+    <h5 class="text-primary">{{ breedInfo.name }}</h5>
+    <p>{{ breedInfo.description }}</p>
+    <p><strong>Temperamento:</strong> {{ breedInfo.temperament }}</p>
+
+    <div *ngIf="breedImages && breedImages.length" id="carouselBreed" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let img of breedImages; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
+          <img [src]="img.url" class="d-block w-100 rounded shadow" [alt]="breedInfo.name">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBreed" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselBreed" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>

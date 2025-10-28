@@ -1,0 +1,7 @@
+/* Basic styles and spacing */
+body {
+  padding-top: 56px;
+}
+.container {
+  max-width: 1100px;
+}

@@ -1,0 +1,9 @@
+<div class="card shadow p-4 text-center" *ngIf="user">
+  <h4 class="mb-3">👋 Bienvenido, {{ user.name || user.username }}</h4>
+  <p><strong>Usuario:</strong> {{ user.username }}</p>
+  <p *ngIf="user.email"><strong>Email:</strong> {{ user.email }}</p>
+  <button class="btn btn-danger mt-3" (click)="logout()">Cerrar sesión</button>
+</div>
+<div *ngIf="!user" class="alert alert-warning">
+  No hay usuario logueado.
+</div>

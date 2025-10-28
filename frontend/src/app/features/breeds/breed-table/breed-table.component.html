@@ -1,0 +1,29 @@
+<div class="card shadow p-4">
+  <h4 class="mb-3 text-center">Razas de gatos</h4>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Buscar raza..." [(ngModel)]="searchTerm">
+    <button class="btn btn-primary" (click)="onSearch()">Buscar</button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>País</th>
+          <th>Temperamento</th>
+          <th>Esperanza de vida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of filteredBreeds">
+          <td>{{ b.name }}</td>
+          <td>{{ b.origin }}</td>
+          <td>{{ b.temperament }}</td>
+          <td>{{ b.life_span }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

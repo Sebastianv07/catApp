@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://sebastianvargas007_db_user:ITzN3Aa1uIgA9Aio@prueba.qobue7f.mongodb.net/catapp
+      database: catapp
+
+thecatapi:
+  url: https://api.thecatapi.com/v1
+  key: live_JBT0Ah0Nt12iyl2IpjQVLDWjcLk0GQwf4zI9wBMfmfejKmcC31mOJp4yJz5TsOUP
